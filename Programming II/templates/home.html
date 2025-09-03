@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home · Your Brand</title>
+  <meta name="description" content="A sleek, modern landing page template." />
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --fg: #e8ecf1;
+      --muted: #a2b0c0;
+      --brand: #7c5cff;
+      --brand-2: #00e3ae;
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-lg: 26px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--fg); background: radial-gradient(1200px 800px at 10% -10%, #18213a 0%, #0b0f19 60%) fixed;
+      overflow-x:hidden;
+    }
+    .grid{display:grid; gap: clamp(16px, 2vw, 28px)}
+    .container{width:min(1100px, 92vw); margin-inline:auto}
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background:rgba(11,15,25,.6); border-bottom:1px solid var(--stroke)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+    .logo{width:34px; aspect-ratio:1; border-radius:12px; background:conic-gradient(from 220deg, var(--brand), var(--brand-2)); box-shadow:0 6px 16px rgba(124,92,255,.4)}
+    .nav a{color:var(--fg); text-decoration:none; opacity:.85}
+    .nav-links{display:flex; gap:20px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; font-weight:600; border:1px solid var(--stroke); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); color:var(--fg); box-shadow:var(--shadow); transition:.25s ease}
+    .btn:hover{transform:translateY(-2px); border-color: rgba(255,255,255,.24)}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); border-color:transparent}
+
+    .hero{position:relative; padding:clamp(48px, 8vw, 110px) 0 56px}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 4vw, 48px)}
+    @media (max-width: 880px){ .hero-grid{grid-template-columns:1fr} }
+    .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); background:rgba(255,255,255,.06); border:1px solid var(--stroke); padding:8px 10px; border-radius:999px}
+    h1{font-size:clamp(36px, 6.2vw, 64px); line-height:1.04; margin:12px 0 12px}
+    .lead{color:var(--muted); font-size:clamp(15px, 2.2vw, 18px)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+
+    .glass{position:relative; background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)); border:1px solid var(--stroke); border-radius:var(--radius-lg); box-shadow:var(--shadow)}
+    .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:20px}
+
+    .hero-media{min-height:320px; display:grid; grid-template-rows:auto 1fr; gap:16px}
+    .screen{position:relative; border-radius:20px; border:1px solid var(--stroke); overflow:hidden; background:radial-gradient(800px 400px at 0% 0%, rgba(124,92,255,.20), rgba(0,0,0,.0)); box-shadow: var(--shadow)}
+    .screen .bar{display:flex; gap:8px; padding:10px; border-bottom:1px solid var(--stroke); background:rgba(0,0,0,.25)}
+    .dot{width:10px; height:10px; border-radius:999px; background:#ff6b6b}
+    .dot:nth-child(2){background:#ffd93d}
+    .dot:nth-child(3){background:#6bff95}
+    .code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:14px; color:#e6e6ff; padding:18px; opacity:.95}
+
+    .features{padding:64px 0}
+    .features-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:20px}
+    @media (max-width: 900px){ .features-grid{grid-template-columns:1fr 1fr} }
+    @media (max-width: 620px){ .features-grid{grid-template-columns:1fr} }
+    .feature{padding:22px; transition: transform .25s ease, border-color .25s ease}
+    .feature:hover{transform:translateY(-4px); border-color:rgba(255,255,255,.24)}
+    .icon{width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; font-weight:800}
+    .feature h3{margin:14px 0 6px}
+    .feature p{margin:0; color:var(--muted)}
+
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center}
+    @media (max-width: 880px){ .split{grid-template-columns:1fr} }
+
+    .testimonials{padding:64px 0}
+    .quotes{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px}
+    @media (max-width: 900px){ .quotes{grid-template-columns:1fr 1fr} }
+    @media (max-width: 620px){ .quotes{grid-template-columns:1fr} }
+    .quote .who{display:flex; align-items:center; gap:12px; margin-top:14px; color:var(--muted)}
+
+    .pricing{padding:64px 0}
+    .tiers{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px}
+    @media (max-width: 900px){ .tiers{grid-template-columns:1fr 1fr} }
+    @media (max-width: 620px){ .tiers{grid-template-columns:1fr} }
+    .price{font-size:38px; font-weight:800}
+    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(0,227,174,.18); border:1px solid rgba(0,227,174,.35); font-size:12px; letter-spacing:.3px}
+
+    .footer{padding:48px 0 60px; color:var(--muted); border-top:1px solid var(--stroke)}
+
+    /* animated blobs */
+    .blob{position:absolute; filter: blur(50px); opacity:.45; pointer-events:none}
+    .blob.one{width:420px; height:420px; background:radial-gradient(circle at 30% 30%, var(--brand), transparent 60%); top:-80px; right:-120px; animation: float 14s ease-in-out infinite}
+    .blob.two{width:380px; height:380px; background:radial-gradient(circle at 70% 40%, var(--brand-2), transparent 60%); bottom:-80px; left:-120px; animation: float 18s ease-in-out infinite reverse}
+    @keyframes float{0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(24px) translateX(8px)}}
+
+    /* small helper */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .mt-8{margin-top:32px}
+  </style>
+  <script>
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('#nav-toggle');
+      const menu = document.querySelector('#nav-menu');
+      btn?.addEventListener('click', () => menu.classList.toggle('open'));
+    });
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="logo"></div> Your Brand</div>
+      <nav class="nav-links" id="nav-menu">
+        <a href="#features">Features</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn" id="nav-toggle" aria-label="Toggle menu" style="display:none">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="blob one"></div>
+      <div class="blob two"></div>
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">🚀 Launch faster</span>
+          <h1>Build a stunning presence with a <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">single file</span>.</h1>
+          <p class="lead">A modern, responsive homepage with glassmorphism, subtle motion, and clean typography—ready to drop into any project.</p>
+          <div class="cta">
+            <a class="btn primary" href="#pricing">Get Started</a>
+            <a class="btn" href="#showcase">Live Preview</a>
+          </div>
+          <p class="muted mt-8">No frameworks required. Pure HTML + CSS.</p>
+        </div>
+        <div class="hero-media">
+          <div class="screen">
+            <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <pre class="code">&lt;div class="card"&gt;✨ Fancy UI&lt;/div&gt;
+&lt;button class="btn primary"&gt;Click me&lt;/button&gt;            </pre>
+          </div>
+          <div class="grid" aria-hidden="true">
+            <div class="card">Zero-install, copy‑paste ready.</div>
+            <div class="card">Responsive from mobile to desktop.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <div class="features-grid">
+          <article class="card feature">
+            <div class="icon">⚡</div>
+            <h3>Fast by default</h3>
+            <p>No heavy libs. Just optimized CSS and semantic HTML.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">🎨</div>
+            <h3>Stylish</h3>
+            <p>Glassmorphism, gradients, and tasteful shadows out of the box.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">🧩</div>
+            <h3>Composable</h3>
+            <p>Cards, buttons, and sections you can rearrange in seconds.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">🔒</div>
+            <h3>Accessible</h3>
+            <p>Readable contrast, focus-friendly controls, semantic markup.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">📱</div>
+            <h3>Responsive</h3>
+            <p>Looks great on phones, tablets, and big screens.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">🧪</div>
+            <h3>Customizable</h3>
+            <p>Tweak CSS variables to match your brand in minutes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase" class="container">
+      <div class="split glass" style="padding:24px">
+        <div>
+          <h2>Showcase</h2>
+          <p class="muted">Drop screenshots, product shots, or a quick pitch here. The layout automatically adapts to your content.</p>
+          <div class="cta">
+            <a class="btn" href="#">Docs</a>
+            <a class="btn" href="#">Changelog</a>
+          </div>
+        </div>
+        <div class="screen" style="min-height:260px">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <pre class="code">.hero { padding: clamp(48px, 8vw, 110px) 0 56px; }
+.features-grid { grid-template-columns: repeat(3, 1fr); }</pre>
+        </div>
+      </div>
+    </section>
+
+    <secti
