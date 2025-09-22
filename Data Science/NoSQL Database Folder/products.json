@@ -1,0 +1,149 @@
+[
+  {
+    "_id": "p0",
+    "name": "Total systemic project",
+    "price": 131.73,
+    "category": "Toys",
+    "tags": [
+      "sale",
+      "limited",
+      "eco"
+    ]
+  },
+  {
+    "_id": "p1",
+    "name": "Compatible real-time productivity",
+    "price": 174.51,
+    "category": "Outdoors",
+    "tags": [
+      "eco",
+      "bestseller",
+      "new"
+    ]
+  },
+  {
+    "_id": "p2",
+    "name": "Down-sized national superstructure",
+    "price": 153.88,
+    "category": "Electronics",
+    "tags": []
+  },
+  {
+    "_id": "p3",
+    "name": "Fully-configurable cohesive Local Area Network",
+    "price": 75.0,
+    "category": "Books",
+    "tags": [
+      "new",
+      "limited"
+    ]
+  },
+  {
+    "_id": "p4",
+    "name": "Multi-tiered encompassing productivity",
+    "price": 194.76,
+    "category": "Home",
+    "tags": []
+  },
+  {
+    "_id": "p5",
+    "name": "Team-oriented next generation definition",
+    "price": 166.73,
+    "category": "Toys",
+    "tags": [
+      "bestseller",
+      "sale"
+    ]
+  },
+  {
+    "_id": "p6",
+    "name": "Synergized fresh-thinking throughput",
+    "price": 13.94,
+    "category": "Outdoors",
+    "tags": [
+      "new",
+      "sale"
+    ],
+    "discontinued": true
+  },
+  {
+    "_id": "p7",
+    "name": "Vision-oriented analyzing emulation",
+    "price": 79.12,
+    "category": "Home",
+    "tags": [
+      "sale",
+      "eco"
+    ]
+  },
+  {
+    "_id": "p8",
+    "name": "Automated foreground initiative",
+    "price": 135.68,
+    "category": "Electronics",
+    "tags": [
+      "bestseller"
+    ]
+  },
+  {
+    "_id": "p9",
+    "name": "Future-proofed asymmetric data-warehouse",
+    "price": 36.86,
+    "category": "Home",
+    "tags": [
+      "bestseller",
+      "sale"
+    ]
+  },
+  {
+    "_id": "p10",
+    "name": "Re-contextualized transitional functionalities",
+    "price": 169.36,
+    "category": "Electronics",
+    "tags": [
+      "new"
+    ],
+    "discontinued": true
+  },
+  {
+    "_id": "p11",
+    "name": "Extended solution-oriented methodology",
+    "price": 83.23,
+    "category": "Electronics",
+    "tags": [
+      "bestseller"
+    ],
+    "discontinued": true
+  },
+  {
+    "_id": "p12",
+    "name": "Object-based secondary knowledgebase",
+    "price": 66.36,
+    "category": "Home",
+    "tags": [
+      "limited",
+      "sale",
+      "bestseller"
+    ]
+  },
+  {
+    "_id": "p13",
+    "name": "Digitized empowering challenge",
+    "price": 150.27,
+    "category": "Toys",
+    "tags": [
+      "bestseller",
+      "limited"
+    ],
+    "discontinued": true
+  },
+  {
+    "_id": "p14",
+    "name": "Fully-configurable value-added open architecture",
+    "price": 82.88,
+    "category": "Outdoors",
+    "tags": [
+      "bestseller"
+    ]
+  }
+]
