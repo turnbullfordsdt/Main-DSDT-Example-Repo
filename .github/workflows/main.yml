@@ -1,0 +1,28 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Print a message
+      run: echo "Hello, CI/CD!"
+
+    # Example of where your actual build/test commands would go.
+    # Replace this with commands specific to your project, e.g., 'npm install', 'npm test', or './build_script.sh'
+    - name: Run project tests
+      # We just exit 0 to show success, but in a real repo, this command's success/failure determines the step's outcome
+      run: exit 0
